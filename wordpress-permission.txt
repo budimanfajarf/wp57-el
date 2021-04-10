@@ -1,0 +1,10 @@
+sudo chown -R $USER:www-data wordpress-directory
+
+sudo find wordpress-directory -type f -exec chmod 664 {} +
+sudo find wordpress-directory -type d -exec chmod 775 {} +
+sudo chmod 660 wordpress-directory/wp-config.php
+
+sudo chmod -R g+s wordpress-directory
+
+https://stackoverflow.com/questions/9133024/www-data-permissions
+https://www.smashingmagazine.com/2014/05/proper-wordpress-filesystem-permissions-ownerships/
